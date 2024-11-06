@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Adnc.Fstorch.Shared.Web.Socket": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:50874;http://localhost:50875"
+    }
+  }
+}

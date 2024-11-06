@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Infrastructures\Adnc.Infra.Repository\Adnc.Infra.Repository.csproj" />
+    <ProjectReference Include="..\..\..\ServiceShared\Adnc.Shared.Repository\Adnc.Shared.Repository.csproj" />
+    <ProjectReference Include="..\..\..\ServiceShared\Adnc.Shared\Adnc.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Demo\Shared\Adnc.Demo.Shared.Const\Adnc.Demo.Shared.Const.csproj" />
+    <ProjectReference Include="..\..\Infrastructures\Adnc.Infra.Redis.Caching\Adnc.Infra.Redis.Caching.csproj" />
+    <ProjectReference Include="..\..\ServiceShared\Adnc.Shared.Application.Contracts\Adnc.Shared.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\ServiceShared\Adnc.Shared.Application\Adnc.Shared.Application.csproj" />
+    <ProjectReference Include="..\Adnc.Fstorch.User.Repository\Adnc.Fstorch.User.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="JYpayInterFace">
+      <HintPath>JYpayInterFace.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

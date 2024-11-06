@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ServiceShared\Adnc.Shared.Application\Adnc.Shared.Application.csproj" />
+	  <ProjectReference Include="..\Adnc.Fstorch.System.Repository\Adnc.Fstorch.System.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

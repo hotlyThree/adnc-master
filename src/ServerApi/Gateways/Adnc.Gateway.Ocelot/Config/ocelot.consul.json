@@ -1,0 +1,215 @@
+{
+  //consul
+  "GlobalConfiguration": {
+    "BaseUrl": "http://172.16.0.4:8888",
+    "UpstreamHeaderTransform": {
+      "From": "gateway",
+      "X-Forwarded-For": "{RemoteIpAddress}"
+    },
+    "DownstreamHeaderTransform": {
+      "X-Forwarded-For": "{RemoteIpAddress}"
+    },
+    "ServiceDiscoveryProvider": {
+      "Scheme": "http",
+      //"Host": "172.16.0.4",
+      "Host": "127.0.0.1",
+      "Port": 8500,
+      "Type": "Consul",
+      "UseServiceDiscovery": true,
+      "UseDiscoveryCache": true,
+      "PollingInterval": 60000
+    }
+  },
+  "Routes": [
+    //usr service
+    {
+      "UpstreamPathTemplate": "/usrs{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/usr{everything}",
+      "ServiceName": "adnc-usr-webapi",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    // maint service
+    {
+      "UpstreamPathTemplate": "/maint{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/maint{everything}",
+      "ServiceName": "adnc-maint-webapi",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    // cus service
+    {
+      "UpstreamPathTemplate": "/cus{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/cus{everything}",
+      "ServiceName": "adnc-cus-webapi",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    // user service
+    {
+      "UpstreamPathTemplate": "/user/api{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/user/api{everything}",
+      "ServiceName": "adnc-fstorch-user-api",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    // user service
+    {
+      "UpstreamPathTemplate": "/auth/api{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/auth/api{everything}",
+      "ServiceName": "adnc-fstorch-user-api",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    // user service
+    {
+      "UpstreamPathTemplate": "/card/api{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/card/api{everything}",
+      "ServiceName": "adnc-fstorch-user-api",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    // user service
+    {
+      "UpstreamPathTemplate": "/comment/api{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/comment/api{everything}",
+      "ServiceName": "adnc-fstorch-user-api",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    // user service
+    {
+      "UpstreamPathTemplate": "/cmp/api{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/cmp/api{everything}",
+      "ServiceName": "adnc-fstorch-user-api",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    // user service
+    {
+      "UpstreamPathTemplate": "/message/api{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/message/api{everything}",
+      "ServiceName": "adnc-fstorch-user-api",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    // file service
+    {
+      "UpstreamPathTemplate": "/file/api{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/file/api{everything}",
+      "ServiceName": "adnc-fstorch-file-api",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+    // aftersales service
+    {
+      "UpstreamPathTemplate": "/aftersales/{everything}",
+      "UpstreamHttpMethod": [
+        "Get",
+        "Put",
+        "Post",
+        "Delete"
+      ],
+      "DownstreamScheme": "http",
+      "DownstreamPathTemplate": "/aftersales/{everything}",
+      "ServiceName": "fstorch-aftersales-api",
+      "LoadBalancerOptions": {
+        "Type": "RoundRobin"
+      }
+    },
+
+    // static file get
+    {
+      "DownstreamPathTemplate": "/Thuming/{everything}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "192.168.100.96",
+          "Port": "50010"
+        }
+      ],
+      "UpstreamPathTemplate": "/Thuming/{everything}",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ]
+}

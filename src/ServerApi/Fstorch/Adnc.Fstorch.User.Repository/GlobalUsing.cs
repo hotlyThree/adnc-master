@@ -1,0 +1,11 @@
+﻿global using Adnc.Infra.Entities;
+global using Adnc.Infra.IRepositories;
+global using Adnc.Shared.Application.Contracts.ResultModels;
+global using System.ComponentModel.DataAnnotations.Schema;
+global using System.Collections.Generic;
+global using System.Linq;
+global using System.Reflection.Emit;
+global using System.Reflection;
+global using Adnc.Shared;
+global using Adnc.Shared.Repository.EfEntities;
+global using Microsoft.EntityFrameworkCore;

@@ -1,0 +1,1 @@
+﻿global using Adnc.Shared.WebApi;

@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NetTopologySuite" Version="2.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Demo\Shared\Adnc.Demo.Shared.Const\Adnc.Demo.Shared.Const.csproj" />
+    <ProjectReference Include="..\..\..\Demo\Shared\Adnc.Demo.Shared.Rpc.Http\Adnc.Demo.Shared.Rpc.Http.csproj" />
+    <ProjectReference Include="..\..\..\Demo\Shared\Adnc.Fstorch.Shared.Web.Socket\Adnc.Fstorch.Shared.Web.Socket.csproj" />
+    <ProjectReference Include="..\..\..\ServiceShared\Adnc.Shared.Application.Contracts\Adnc.Shared.Application.Contracts.csproj" />
+    <ProjectReference Include="..\..\..\ServiceShared\Adnc.Shared.Application\Adnc.Shared.Application.csproj" />
+    <ProjectReference Include="..\Fstorch.AfterSales.Repository\Fstorch.AfterSales.Repository.csproj" />
+  </ItemGroup>
+
+</Project>

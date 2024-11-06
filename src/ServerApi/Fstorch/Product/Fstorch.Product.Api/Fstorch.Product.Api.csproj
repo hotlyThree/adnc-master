@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Nlog\**" />
+    <Content Remove="Nlog\**" />
+    <EmbeddedResource Remove="Nlog\**" />
+    <None Remove="Nlog\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Demo\Shared\resources\**\*">
+      <Link>%(RecursiveDir)/%(FileName)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\ServiceShared\Adnc.Shared.WebApi\Adnc.Shared.WebApi.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Adnc.Demo.Shared.Rpc.Http": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:63182;http://localhost:63183"
+    }
+  }
+}

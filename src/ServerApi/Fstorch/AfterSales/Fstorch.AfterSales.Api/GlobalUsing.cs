@@ -1,0 +1,34 @@
+﻿global using Adnc.Demo.Shared.Const;
+global using Microsoft.AspNetCore.Mvc;
+global using Fstorch.AfterSales.Application.Services;
+global using Fstorch.AfterSales.Application.Dtos.ServiceType;
+global using Adnc.Shared.WebApi.Authentication;
+global using Adnc.Shared.WebApi.Authorization;
+global using Adnc.Shared.WebApi.Registrar;
+global using Fstorch.AfterSales.Api.Authentication;
+global using Fstorch.AfterSales.Api.Authorization;
+global using Microsoft.AspNetCore.Authorization;
+global using Fstorch.AfterSales.Application.Dtos.InformationSource;
+global using Fstorch.AfterSales.Application.Dtos.ServiceNature;
+global using Fstorch.AfterSales.Application.Dtos.UserType;
+global using Fstorch.AfterSales.Application.Dtos.Market;
+global using Fstorch.AfterSales.Application.Dtos.ServiceBrand;
+global using Fstorch.AfterSales.Application.Dtos.SettlementCode;
+global using Adnc.Shared.Application.Contracts.Dtos;
+global using Adnc.Shared.Application.Contracts.ResultModels;
+global using Fstorch.AfterSales.Application.Dtos.ServiceMain;
+global using Fstorch.AfterSales.Application.Dtos.ServiceProduct;
+global using Fstorch.AfterSales.Application.Dtos.ServiceCause;
+global using Fstorch.AfterSales.Application.Dtos.ServiceFollow;
+global using Fstorch.AfterSales.Application.Dtos.ServiceRequest;
+global using Fstorch.AfterSales.Application.Dtos.ServiceTag;
+global using Fstorch.AfterSales.Application.Dtos.ServiceOrder;
+global using Fstorch.AfterSales.Application.Dtos.ServiceOrderCope;
+global using Fstorch.AfterSales.Application.Dtos.ServiceOrderEngineer;
+global using Fstorch.AfterSales.Application.Dtos.ServiceOrderRec;
+global using Fstorch.AfterSales.Application.Dtos.Public;
+global using Fstorch.AfterSales.Application.Dtos.ServiceOrderFollow;
+global using Fstorch.AfterSales.Application.Dtos.ServiceOrderProcess;
+global using Fstorch.AfterSales.Application.Dtos.ServiceOrderProduct;
+
+

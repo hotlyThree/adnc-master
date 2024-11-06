@@ -1,0 +1,56 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Description>电子名片用户中心服务</Description>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+    <UserSecretsId>52118431-f681-44ad-8411-ce593bbe05c2</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    <DockerfileContext>..\..</DockerfileContext>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Nlog\**" />
+    <Content Remove="Nlog\**" />
+    <EmbeddedResource Remove="Nlog\**" />
+    <None Remove="Nlog\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\Demo\Shared\resources\**\*">
+      <Link>%(RecursiveDir)/%(FileName)%(Extension)</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc.AspNetCore" Version="2.47.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.17.2" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\..\Demo\Shared\Adnc.Demo.Shared.Rpc.Grpc\Adnc.Demo.Shared.Rpc.Grpc.csproj" />
+    <ProjectReference Include="..\..\Demo\Shared\Adnc.Fstorch.Shared.Web.Socket\Adnc.Fstorch.Shared.Web.Socket.csproj" />
+    <ProjectReference Include="..\..\ServiceShared\Adnc.Shared.WebApi\Adnc.Shared.WebApi.csproj" />
+    <ProjectReference Include="..\Adnc.Fstorch.User.Application\Adnc.Fstorch.User.Application.csproj" />
+  </ItemGroup>
+  
+
+  <ItemGroup>
+    <!--<Protobuf Include="..\..\..\ServiceShared\Adnc.Shared\Protos\Rtos\*.proto" GrpcServices="Server" Link="Grpc\Protos\Rtos\%(RecursiveDir)%(Filename)%(Extension)" ProtoRoot="..\..\..\ServiceShared\Adnc.Shared\" />-->
+    <Protobuf Include="..\..\Demo\Shared\protos\services\msggrpc.proto" GrpcServices="Server" Link="Grpc\protos\msggrpc.proto" ProtoRoot="..\..\Demo\Shared\protos\" />
+  </ItemGroup>
+
+</Project>

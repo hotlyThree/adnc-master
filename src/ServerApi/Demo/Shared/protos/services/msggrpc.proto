@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "messages/common.proto";
+
+option csharp_namespace = "Adnc.Demo.Shared.Rpc.Grpc.Services";
+
+package services;
+
+service  MsgGrpc {
+  rpc ChangeThumimg(ChangeThumimgRequest) returns (messages.GrpcResponse);
+}
+
+message ChangeThumimgRequest {
+	int64 id = 1; //ÎÄÕÂID
+	string path = 2; //ËõÂÔÍ¼Â·¾¶
+}
+

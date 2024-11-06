@@ -1,0 +1,12 @@
+{
+  "profiles": {
+    "Adnc.Infra.Redis": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:63163;http://localhost:63164"
+    }
+  }
+}
